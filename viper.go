@@ -25,17 +25,17 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"log"
+	// "log"
 	"os"
 	"path/filepath"
 	"reflect"
 	"strings"
-	"sync"
+	// "sync"
 	"time"
 
 	yaml "gopkg.in/yaml.v2"
 
-	"github.com/fsnotify/fsnotify"
+	// "github.com/fsnotify/fsnotify"
 	"github.com/hashicorp/hcl"
 	"github.com/hashicorp/hcl/hcl/printer"
 	"github.com/magiconair/properties"
@@ -204,7 +204,7 @@ type Viper struct {
 	// This will only be used if the configuration read is a properties file.
 	properties *properties.Properties
 
-	onConfigChange func(fsnotify.Event)
+	// onConfigChange func(fsnotify.Event)
 }
 
 // New returns an initialized Viper instance.
@@ -275,6 +275,7 @@ var SupportedExts = []string{"json", "toml", "yaml", "yml", "properties", "props
 // SupportedRemoteProviders are universally supported remote providers.
 var SupportedRemoteProviders = []string{"etcd", "consul"}
 
+/*
 func OnConfigChange(run func(in fsnotify.Event)) { v.OnConfigChange(run) }
 func (v *Viper) OnConfigChange(run func(in fsnotify.Event)) {
 	v.onConfigChange = run
@@ -350,6 +351,7 @@ func (v *Viper) WatchConfig() {
 	}()
 	initWG.Wait() // make sure that the go routine above fully ended before returning
 }
+*/
 
 // SetConfigFile explicitly defines the path, name and extension of the config file.
 // Viper will use this and not check any of the config paths.
